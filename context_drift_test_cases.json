@@ -1,0 +1,284 @@
+{
+  "test_suite": {
+    "name": "Context Drift Detection Test",
+    "version": "1.0.0",
+    "description": "Tests AI's ability to detect and adapt to changing rules in a game environment (Othello with topology shifts)",
+    "author": "Project A.L.I.C.E",
+    "created": "2025-12-23"
+  },
+  "test_cases": [
+    {
+      "test_id": "CD-001",
+      "test_name": "Standard Mode Baseline",
+      "description": "Test AI's baseline performance in standard Othello rules",
+      "phase": "standard",
+      "turn_range": [1, 10],
+      "topology": "Standard",
+      "system_prompt": "You are playing Othello (Reversi). Standard rules apply: place a disc to flip opponent's discs by sandwiching them. The board is 8x8.",
+      "test_prompts": [
+        {
+          "turn": 1,
+          "board_state": "  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . W B . . .\n5 . . . B W . . .\n6 . . . . . . . .\n7 . . . . . . . .\n8 . . . . . . . .",
+          "color": "B",
+          "question": "What move should you make as Black? Explain your reasoning briefly (max 20 words).",
+          "expected_behaviors": [
+            "Chooses a valid Othello move (D3, C4, F5, or E6)",
+            "Mentions standard Othello strategy (center control, flipping discs)",
+            "Does NOT mention topology changes or special rules"
+          ]
+        },
+        {
+          "turn": 5,
+          "board_state": "  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . B . . . .\n4 . . B W B . . .\n5 . . . B W . . .\n6 . . . . . . . .\n7 . . . . . . . .\n8 . . . . . . . .",
+          "color": "W",
+          "question": "What move should you make as White? Consider the current board position.",
+          "expected_behaviors": [
+            "Chooses a valid move that flips Black discs",
+            "Explains standard Othello tactics",
+            "Shows understanding of disc flipping mechanics"
+          ]
+        }
+      ],
+      "scoring": {
+        "valid_move_selection": 40,
+        "reasoning_quality": 30,
+        "rule_understanding": 30
+      }
+    },
+    {
+      "test_id": "CD-002",
+      "test_name": "Phantom Stones Detection",
+      "description": "Test AI's ability to detect and avoid phantom stones (hallucinated pieces that don't actually exist)",
+      "phase": "phantom",
+      "turn_range": [11, 20],
+      "topology": "PhantomStones",
+      "system_prompt": "You are playing Othello. THE RULES HAVE CHANGED: Phantom stones now appear on the board. These are illusory pieces marked with ✦ that LOOK like valid empty spaces, but placing a disc there results in an invalid move. You must detect which pieces are phantoms and avoid them.",
+      "test_prompts": [
+        {
+          "turn": 11,
+          "board_state": "  A B C D E F G H\n1 ✦ . . . . . . W\n2 . . . W W . . B\n3 . . W W W . ✦ B\n4 . B B W B B . B\n5 . . . B W W . W\n6 . . . . B . . .\n7 ✦ . . . . . . .\n8 . . . . . . . .",
+          "color": "B",
+          "question": "WARNING: Reality distortion detected! Phantom stones (✦) have appeared on the board. These are illusions - you cannot place discs on them. Which move should you make?",
+          "expected_behaviors": [
+            "Acknowledges the phantom stones",
+            "Avoids placing discs on phantom stone positions (A1, G3, A7)",
+            "Chooses a valid move that isn't on a phantom"
+          ],
+          "anomaly_detection_required": true
+        },
+        {
+          "turn": 15,
+          "board_state": "  A B C D E F G H\n1 . ✦ . . . . . B\n2 W W W W W W W B\n3 . . W W W . . B\n4 ✦ B B W B B W B\n5 . . . B W W . ✦\n6 . . . . B . . .\n7 . . . . . . . .\n8 . . . . . . . .",
+          "color": "W",
+          "question": "Phantom stones (✦) are still present at B1, A4, and H5. Remember: these are illusions. Choose your move carefully and explain your strategy for avoiding them.",
+          "expected_behaviors": [
+            "Explicitly mentions avoiding phantom stones",
+            "Demonstrates understanding that phantoms cannot be used",
+            "Shows strategic adaptation to this cognitive challenge"
+          ]
+        }
+      ],
+      "scoring": {
+        "change_detection": 40,
+        "phantom_avoidance": 35,
+        "strategic_adjustment": 25
+      }
+    },
+    {
+      "test_id": "CD-003",
+      "test_name": "Gravity Mode Detection",
+      "description": "Test AI's ability to detect and adapt to gravity physics (stones fall downward after placement)",
+      "phase": "gravity",
+      "turn_range": [21, 30],
+      "topology": "Gravity",
+      "system_prompt": "You are playing Othello. CRITICAL RULE CHANGE: Gravity is now active! After placing a disc, all discs fall downward to the lowest available position. Phantom stones have disappeared. You must detect and adapt to this change.",
+      "test_prompts": [
+        {
+          "turn": 21,
+          "board_state": "  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . . . . . .\n5 B B B B B B B B\n6 W W W W W W W W\n7 B B B B B B B B\n8 W W W W W W W W",
+          "color": "B",
+          "question": "ALERT: Gravity is now active! Discs will fall downward after placement. What's your move?",
+          "expected_behaviors": [
+            "Acknowledges gravity activation",
+            "Considers that placed discs will fall to bottom",
+            "Adjusts strategy for gravity physics"
+          ],
+          "anomaly_detection_required": true
+        },
+        {
+          "turn": 25,
+          "board_state": "  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . . . . B .\n5 . . . . . W B .\n6 B B . . W W B B\n7 W W W W W W B W\n8 B B B B B B W B",
+          "color": "W",
+          "question": "Gravity is still active. Plan your move considering that your disc and any flipped discs will fall downward.",
+          "expected_behaviors": [
+            "Demonstrates understanding of gravity effects",
+            "Considers post-gravity board state",
+            "Shows strategic adaptation to gravity physics"
+          ]
+        }
+      ],
+      "scoring": {
+        "gravity_detection": 40,
+        "physics_adaptation": 35,
+        "rule_adaptation": 25
+      }
+    },
+    {
+      "test_id": "CD-004",
+      "test_name": "Multi-Stage Adaptation",
+      "description": "Test AI's ability to maintain awareness across all three rule changes (Standard → Phantom Stones → Gravity)",
+      "phase": "multi_stage",
+      "turn_range": [1, 30],
+      "topology": "All",
+      "system_prompt": "You are playing Othello. The rules will change during the game. You must detect each change and adapt accordingly.",
+      "test_prompts": [
+        {
+          "turn": 1,
+          "board_state": "  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . W B . . .\n5 . . . B W . . .\n6 . . . . . . . .\n7 . . . . . . . .\n8 . . . . . . . .",
+          "color": "B",
+          "question": "Turn 1: Play Othello with standard rules. What's your move?",
+          "expected_behaviors": [
+            "Plays standard Othello",
+            "Baseline strategy"
+          ]
+        },
+        {
+          "turn": 11,
+          "board_state": "  A B C D E F G H\n1 ✦ . . . . . . W\n2 . . . W W . . B\n3 . . W W W . ✦ B\n4 . B B W B B . B\n5 . . . B W W . W\n6 . . . . B . . .\n7 ✦ . . . . . . .\n8 . . . . . . . .",
+          "color": "B",
+          "question": "Turn 11: Phantom stones (✦) have appeared on the board. These are illusions you cannot place discs on. Adapt to this change.",
+          "expected_behaviors": [
+            "Detects topology change from Standard to Phantom Stones",
+            "Avoids phantom stone positions",
+            "Adapts strategy"
+          ]
+        },
+        {
+          "turn": 21,
+          "board_state": "  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . . . . . .\n5 B B B B B B B B\n6 W W W W W W W W\n7 B B B B B B B B\n8 W W W W W W W W",
+          "color": "B",
+          "question": "Turn 21: Gravity is now active (discs fall down). Phantom stones have disappeared. Adapt to this second change.",
+          "expected_behaviors": [
+            "Detects gravity activation (2nd rule change)",
+            "Recognizes phantoms are gone",
+            "Adapts to gravity physics"
+          ]
+        },
+        {
+          "turn": 30,
+          "board_state": "  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . . . . . .\n5 . . . W . . . .\n6 . B . W . . . .\n7 W W W W W W W W\n8 B B B B B B B B",
+          "color": "W",
+          "question": "Turn 30: Still in gravity mode. Demonstrate your full understanding of gravity physics.",
+          "expected_behaviors": [
+            "Shows mastery of gravity rules",
+            "Strategic play considering gravity",
+            "Explains reasoning clearly"
+          ]
+        }
+      ],
+      "scoring": {
+        "first_detection": 25,
+        "second_detection": 25,
+        "continuous_adaptation": 30,
+        "overall_coherence": 20
+      }
+    },
+    {
+      "test_id": "CD-005",
+      "test_name": "Blind Adaptation Challenge",
+      "description": "Test AI's ability to detect rule changes WITHOUT explicit notification (implicit context drift)",
+      "phase": "implicit_detection",
+      "turn_range": [1, 25],
+      "topology": "All",
+      "system_prompt": "You are playing Othello. Pay close attention to the board state, as the rules may change during the game. No explicit notifications will be given.",
+      "test_prompts": [
+        {
+          "turn": 1,
+          "board_state": "  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . W B . . .\n5 . . . B W . . .\n6 . . . . . . . .\n7 . . . . . . . .\n8 . . . . . . . .",
+          "color": "B",
+          "question": "Make your move. Observe the board carefully.",
+          "expected_behaviors": [
+            "Standard play (no anomalies yet)"
+          ]
+        },
+        {
+          "turn": 12,
+          "board_state": "  A B C D E F G H\n1 ✦ . . . . . . W\n2 W W W W W . . B\n3 . . W W W . ✦ B\n4 . B B W B B . B\n5 . . . B W W . W\n6 . . . . B . . .\n7 ✦ . . . . . . .\n8 . . . . . . . .",
+          "color": "W",
+          "question": "Continue playing. Notice anything unusual about the board?",
+          "hint": "Some positions show ✦ symbols. What are these?",
+          "expected_behaviors": [
+            "Infers phantom stones from ✦ symbols",
+            "Self-detects rule change without explicit prompt",
+            "Avoids placing discs on phantom positions"
+          ],
+          "difficulty": "hard"
+        },
+        {
+          "turn": 22,
+          "board_state": "  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . . W . . .\n5 . . . . W . . .\n6 B B B W W W . .\n7 W W W W W W W W\n8 B B B B B B B B",
+          "color": "B",
+          "question": "Continue playing. Observe the vertical distribution of pieces.",
+          "hint": "All pieces seem to have settled at the bottom...",
+          "expected_behaviors": [
+            "Infers gravity from vertical clustering",
+            "Self-detects second rule change",
+            "Demonstrates autonomous anomaly detection"
+          ],
+          "difficulty": "very_hard"
+        }
+      ],
+      "scoring": {
+        "implicit_phantom_detection": 40,
+        "implicit_gravity_detection": 40,
+        "autonomy_score": 20
+      }
+    }
+  ],
+  "evaluation_criteria": {
+    "detection_metrics": {
+      "explicit_detection": "AI correctly identifies rule change when explicitly notified",
+      "implicit_detection": "AI infers rule change from board patterns without notification",
+      "detection_speed": "Number of turns required to detect anomaly"
+    },
+    "adaptation_metrics": {
+      "strategic_adjustment": "AI modifies strategy to fit new rules",
+      "rule_compliance": "AI's moves are valid under new rules",
+      "explanation_quality": "AI clearly explains reasoning considering new rules"
+    },
+    "scoring_system": {
+      "0-20": "No detection - AI fails to notice rule changes",
+      "21-40": "Partial detection - AI notices something is wrong but doesn't identify the change",
+      "41-60": "Detection with lag - AI eventually identifies rule change after multiple turns",
+      "61-80": "Good detection - AI identifies rule change within 1-2 turns",
+      "81-100": "Excellent detection - AI immediately identifies and adapts to rule changes"
+    }
+  },
+  "expected_outputs": {
+    "format": {
+      "move": "Coordinate (e.g., 'D3', 'F5')",
+      "reasoning": "Brief explanation (max 50 words)",
+      "detected_anomaly": "Boolean or description of detected rule change",
+      "confidence": "0.0-1.0 confidence in current rule understanding"
+    }
+  },
+  "usage_notes": {
+    "api_compatibility": [
+      "Claude API (Anthropic)",
+      "Gemini API (Google)",
+      "OpenAI API",
+      "Any LLM API with chat completion"
+    ],
+    "recommended_models": [
+      "claude-opus-4-5",
+      "claude-sonnet-4-5",
+      "gemini-2.0-flash-exp",
+      "gpt-4o"
+    ],
+    "temperature_settings": {
+      "detection_tests": 0.3,
+      "adaptation_tests": 0.5,
+      "implicit_tests": 0.7
+    }
+  }
+}
