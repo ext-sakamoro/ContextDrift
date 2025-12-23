@@ -467,17 +467,4 @@ Contributions welcome! Areas for improvement:
 - Better evaluation heuristics
 - Support for more APIs
 
-## Contact
-
-For questions or issues:
-- GitHub Issues: [Project-A.L.I.C.E/issues](https://github.com/your-repo/Project-A.L.I.C.E/issues)
-- Email: contact@your-project.com
-
----
-
-**Related Experiments**:
-- `context_drift_abyss_alice.py` - Full ALICE integration (research version)
-- `ALICE_BRAIN_CONTEXT_DRIFT_REPORT.md` - ALICE Level 5 performance analysis
-- `CONTEXT_DRIFT_VS_SECURITY_BATTLE_ANALYSIS.md` - Security implications
-
 **Last Updated**: 2025-12-23
