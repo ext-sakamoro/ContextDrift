@@ -451,7 +451,7 @@ If you use this test suite in research, please cite:
   author={Project A.L.I.C.E},
   year={2025},
   version={1.0.0},
-  url={https://github.com/your-repo/Project-A.L.I.C.E}
+  url={https://github.com/ext-sakamoro/ContextDrift}
 }
 ```
 
