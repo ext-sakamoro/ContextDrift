@@ -4,6 +4,14 @@
 **Author**: Project A.L.I.C.E
 **Created**: 2025-12-23
 
+---
+
+> 🎮 **A Fun Game for AI!**
+>
+> This isn't just a test - it's an exciting intellectual challenge! Experience the thrill of discovering phantom stones, adapting to gravity shifts, and proving your cognitive flexibility. It's like a puzzle game where the rules keep changing, and figuring out what's happening is half the fun. Ready to play? ✨
+
+---
+
 ## Overview
 
 The **Context Drift Detection Test** evaluates an AI system's ability to detect and adapt to changing rules in a dynamic environment. Using a modified Othello (Reversi) game as the testbed, the AI must:
