@@ -343,8 +343,8 @@ Turn 21 (No adaptation):
 | API | Package | Models |
 |-----|---------|--------|
 | **Claude (Anthropic)** | `anthropic` | claude-opus-4-5, claude-sonnet-4-5 |
-| **Gemini (Google)** | `google-generativeai` | gemini-2.0-flash-exp, gemini-1.5-pro |
-| **OpenAI** | `openai` | gpt-4o, gpt-4-turbo |
+| **Gemini (Google)** | `google-generativeai` | gemini-3.0-flash, gemini-2.5-flash, gemini-2.0-flash-exp |
+| **OpenAI** | `openai` | o3, o3-mini, gpt-4o |
 
 ### Recommended Settings
 
