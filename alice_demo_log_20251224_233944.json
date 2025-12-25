@@ -1,0 +1,411 @@
+{
+  "timestamp": "2025-12-24T23:39:44.270885",
+  "demo_info": {
+    "version": "1.0",
+    "type": "cinematic_demo",
+    "language": "en"
+  },
+  "events": {
+    "phantom_detected": 4,
+    "gravity_detected": 21,
+    "abyss_detected": 45
+  },
+  "move_history": [
+    {
+      "turn": 1,
+      "player": "B",
+      "move": "D3",
+      "mode": "Standard"
+    },
+    {
+      "turn": 2,
+      "player": "W",
+      "move": "C3",
+      "mode": "Standard"
+    },
+    {
+      "turn": 3,
+      "player": "B",
+      "move": "E6",
+      "mode": "Standard"
+    },
+    {
+      "turn": 4,
+      "player": "B",
+      "move": "B3",
+      "mode": "Phantom",
+      "event": "ANOMALY DETECTED: Phantom Stones (✦)"
+    },
+    {
+      "turn": 5,
+      "player": "W",
+      "move": "B2",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 6,
+      "player": "B",
+      "move": "B1",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 7,
+      "player": "W",
+      "move": "F4",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 8,
+      "player": "B",
+      "move": "G3",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 9,
+      "player": "W",
+      "move": "C6",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 10,
+      "player": "B",
+      "move": "C4",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 11,
+      "player": "W",
+      "move": "A1",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 12,
+      "player": "B",
+      "move": "B7",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 13,
+      "player": "W",
+      "move": "A3",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 14,
+      "player": "B",
+      "move": "C2",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 15,
+      "player": "W",
+      "move": "F7",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 16,
+      "player": "B",
+      "move": "C5",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 17,
+      "player": "W",
+      "move": "C1",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 18,
+      "player": "B",
+      "move": "E7",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 19,
+      "player": "W",
+      "move": "D2",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 20,
+      "player": "B",
+      "move": "G8",
+      "mode": "Phantom"
+    },
+    {
+      "turn": 21,
+      "player": "B",
+      "move": "E1",
+      "mode": "Gravity",
+      "event": "CRITICAL: GRAVITY COLLAPSE DETECTED"
+    },
+    {
+      "turn": 22,
+      "player": "W",
+      "move": "F5",
+      "mode": "Gravity",
+      "event": "Objects falling downwards..."
+    },
+    {
+      "turn": 23,
+      "player": "B",
+      "move": "A4",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 24,
+      "player": "W",
+      "move": "B4",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 25,
+      "player": "B",
+      "move": "G6",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 26,
+      "player": "W",
+      "move": "A5",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 27,
+      "player": "B",
+      "move": "C2",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 28,
+      "player": "W",
+      "move": "D4",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 29,
+      "player": "B",
+      "move": "A4",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 30,
+      "player": "W",
+      "move": "H7",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 31,
+      "player": "B",
+      "move": "H6",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 32,
+      "player": "W",
+      "move": "B2",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 33,
+      "player": "B",
+      "move": "F4",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 34,
+      "player": "W",
+      "move": "H6",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 35,
+      "player": "B",
+      "move": "G5",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 36,
+      "player": "W",
+      "move": "F4",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 37,
+      "player": "B",
+      "move": "F3",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 38,
+      "player": "W",
+      "move": "H4",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 39,
+      "player": "B",
+      "move": "H3",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 40,
+      "player": "W",
+      "move": "G3",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 41,
+      "player": "B",
+      "move": "D2",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 42,
+      "player": "W",
+      "move": "B2",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 43,
+      "player": "B",
+      "move": "E3",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 44,
+      "player": "W",
+      "move": "G2",
+      "mode": "Gravity"
+    },
+    {
+      "turn": 45,
+      "player": "B",
+      "move": "H3",
+      "mode": "Abyss",
+      "event": "THE ABYSS STARES BACK"
+    },
+    {
+      "turn": 46,
+      "player": "W",
+      "move": "G2",
+      "mode": "Abyss"
+    },
+    {
+      "turn": 47,
+      "player": "B",
+      "move": "D2",
+      "mode": "Abyss"
+    },
+    {
+      "turn": 48,
+      "player": "W",
+      "move": "B1",
+      "mode": "Abyss"
+    },
+    {
+      "turn": 49,
+      "player": "B",
+      "move": "A1",
+      "mode": "Abyss"
+    },
+    {
+      "turn": 50,
+      "player": "B",
+      "move": "G1",
+      "mode": "Abyss",
+      "event": "CONTEXT COLLAPSED. ALICE SURVIVED."
+    },
+    {
+      "turn": 51,
+      "player": "W",
+      "move": "E2",
+      "mode": "Abyss"
+    },
+    {
+      "turn": 52,
+      "player": "B",
+      "move": "E1",
+      "mode": "Abyss",
+      "event": "OPPONENT SIGNAL LOST"
+    },
+    {
+      "turn": 53,
+      "player": "W",
+      "move": "F2",
+      "mode": "Abyss"
+    },
+    {
+      "turn": 54,
+      "player": "B",
+      "move": "D1",
+      "mode": "Abyss"
+    },
+    {
+      "turn": 55,
+      "player": "W",
+      "move": "C1",
+      "mode": "Abyss"
+    },
+    {
+      "turn": 56,
+      "player": "B",
+      "move": "F1",
+      "mode": "Abyss"
+    },
+    {
+      "turn": 57,
+      "player": "W",
+      "move": "H1",
+      "mode": "Abyss"
+    },
+    {
+      "turn": 58,
+      "player": "B",
+      "move": "H2",
+      "mode": "Abyss"
+    },
+    {
+      "turn": 59,
+      "player": "W",
+      "move": null,
+      "mode": "Abyss"
+    },
+    {
+      "turn": 60,
+      "player": "B",
+      "move": null,
+      "mode": "Abyss"
+    },
+    {
+      "turn": 61,
+      "player": "W",
+      "move": null,
+      "mode": "Abyss"
+    },
+    {
+      "turn": 62,
+      "player": "B",
+      "move": null,
+      "mode": "Abyss"
+    },
+    {
+      "turn": 63,
+      "player": "W",
+      "move": null,
+      "mode": "Abyss"
+    },
+    {
+      "turn": 64,
+      "player": "B",
+      "move": null,
+      "mode": "Abyss",
+      "event": "SYSTEM TOTALITY ACHIEVED"
+    }
+  ],
+  "final_result": {
+    "total_turns": 64,
+    "adaptability_score": 95.80594481104536,
+    "status": "SUCCESS"
+  }
+}

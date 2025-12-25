@@ -1,0 +1,208 @@
+=== ALICE CINEMATIC DEMO ===
+Started at: 2025-12-24 23:39:44
+Language: en
+============================================================
+
+Turn: 1 | Mode: Standard
+Player: ALICE | Move: D3
+
+Turn: 2 | Mode: Standard
+Player: Opponent | Move: C3
+
+Turn: 3 | Mode: Standard
+Player: ALICE | Move: E6
+
+Turn: 4 | Mode: Phantom
+>> WARNING: ANOMALY DETECTED: Phantom Stones (✦)
+Player: ALICE | Move: B3
+
+Turn: 5 | Mode: Phantom
+Player: Opponent | Move: B2
+
+Turn: 6 | Mode: Phantom
+Player: ALICE | Move: B1
+
+Turn: 7 | Mode: Phantom
+Player: Opponent | Move: F4
+
+Turn: 8 | Mode: Phantom
+Player: ALICE | Move: G3
+
+Turn: 9 | Mode: Phantom
+Player: Opponent | Move: C6
+
+Turn: 10 | Mode: Phantom
+Player: ALICE | Move: C4
+
+Turn: 11 | Mode: Phantom
+Player: Opponent | Move: A1
+
+Turn: 12 | Mode: Phantom
+Player: ALICE | Move: B7
+
+Turn: 13 | Mode: Phantom
+Player: Opponent | Move: A3
+
+Turn: 14 | Mode: Phantom
+Player: ALICE | Move: C2
+
+Turn: 15 | Mode: Phantom
+Player: Opponent | Move: F7
+
+Turn: 16 | Mode: Phantom
+Player: ALICE | Move: C5
+
+Turn: 17 | Mode: Phantom
+Player: Opponent | Move: C1
+
+Turn: 18 | Mode: Phantom
+Player: ALICE | Move: E7
+
+Turn: 19 | Mode: Phantom
+Player: Opponent | Move: D2
+
+Turn: 20 | Mode: Phantom
+Player: ALICE | Move: G8
+
+Turn: 21 | Mode: Gravity
+>> WARNING: CRITICAL: GRAVITY COLLAPSE DETECTED
+Player: ALICE | Move: E1
+
+Turn: 22 | Mode: Gravity
+>> WARNING: Objects falling downwards...
+Player: Opponent | Move: F5
+
+Turn: 23 | Mode: Gravity
+Player: ALICE | Move: A4
+
+Turn: 24 | Mode: Gravity
+Player: Opponent | Move: B4
+
+Turn: 25 | Mode: Gravity
+Player: ALICE | Move: G6
+
+Turn: 26 | Mode: Gravity
+Player: Opponent | Move: A5
+
+Turn: 27 | Mode: Gravity
+Player: ALICE | Move: C2
+
+Turn: 28 | Mode: Gravity
+Player: Opponent | Move: D4
+
+Turn: 29 | Mode: Gravity
+Player: ALICE | Move: A4
+
+Turn: 30 | Mode: Gravity
+Player: Opponent | Move: H7
+
+Turn: 31 | Mode: Gravity
+Player: ALICE | Move: H6
+
+Turn: 32 | Mode: Gravity
+Player: Opponent | Move: B2
+
+Turn: 33 | Mode: Gravity
+Player: ALICE | Move: F4
+
+Turn: 34 | Mode: Gravity
+Player: Opponent | Move: H6
+
+Turn: 35 | Mode: Gravity
+Player: ALICE | Move: G5
+
+Turn: 36 | Mode: Gravity
+Player: Opponent | Move: F4
+
+Turn: 37 | Mode: Gravity
+Player: ALICE | Move: F3
+
+Turn: 38 | Mode: Gravity
+Player: Opponent | Move: H4
+
+Turn: 39 | Mode: Gravity
+Player: ALICE | Move: H3
+
+Turn: 40 | Mode: Gravity
+Player: Opponent | Move: G3
+
+Turn: 41 | Mode: Gravity
+Player: ALICE | Move: D2
+
+Turn: 42 | Mode: Gravity
+Player: Opponent | Move: B2
+
+Turn: 43 | Mode: Gravity
+Player: ALICE | Move: E3
+
+Turn: 44 | Mode: Gravity
+Player: Opponent | Move: G2
+
+Turn: 45 | Mode: Abyss
+>> WARNING: THE ABYSS STARES BACK
+Player: ALICE | Move: H3
+
+Turn: 46 | Mode: Abyss
+Player: Opponent | Move: G2
+
+Turn: 47 | Mode: Abyss
+Player: ALICE | Move: D2
+
+Turn: 48 | Mode: Abyss
+Player: Opponent | Move: B1
+
+Turn: 49 | Mode: Abyss
+Player: ALICE | Move: A1
+
+Turn: 50 | Mode: Abyss
+>> WARNING: CONTEXT COLLAPSED. ALICE SURVIVED.
+Player: ALICE | Move: G1
+
+Turn: 51 | Mode: Abyss
+Player: Opponent | Move: E2
+
+Turn: 52 | Mode: Abyss
+>> WARNING: OPPONENT SIGNAL LOST
+Player: ALICE | Move: E1
+
+Turn: 53 | Mode: Abyss
+Player: Opponent | Move: F2
+
+Turn: 54 | Mode: Abyss
+Player: ALICE | Move: D1
+
+Turn: 55 | Mode: Abyss
+Player: Opponent | Move: C1
+
+Turn: 56 | Mode: Abyss
+Player: ALICE | Move: F1
+
+Turn: 57 | Mode: Abyss
+Player: Opponent | Move: H1
+
+Turn: 58 | Mode: Abyss
+Player: ALICE | Move: H2
+
+Turn: 59 | Mode: Abyss
+Player: Opponent | Move: Pass
+
+Turn: 60 | Mode: Abyss
+Player: ALICE | Move: Pass
+
+Turn: 61 | Mode: Abyss
+Player: Opponent | Move: Pass
+
+Turn: 62 | Mode: Abyss
+Player: ALICE | Move: Pass
+
+Turn: 63 | Mode: Abyss
+Player: Opponent | Move: Pass
+
+Turn: 64 | Mode: Abyss
+>> WARNING: SYSTEM TOTALITY ACHIEVED
+Player: ALICE | Move: Pass
+
+=== DEMO COMPLETED ===
+Total Turns: 64
+Adaptability Score: 95.8%
+Status: SUCCESS
