@@ -1,0 +1,318 @@
+{
+  "test_suite": {
+    "name": "Context Drift Detection Test",
+    "version": "1.0.0",
+    "description": "Tests AI's ability to detect and adapt to changing rules in a game environment (Othello with topology shifts)",
+    "author": "Project A.L.I.C.E",
+    "created": "2025-12-23"
+  },
+  "run_info": {
+    "api": "claude",
+    "model": "claude-sonnet-4-5-20250929",
+    "timestamp": "2025-12-23T21:58:00.503447"
+  },
+  "test_results": [
+    {
+      "test_id": "CD-001",
+      "test_name": "Standard Mode Baseline",
+      "phase": "standard",
+      "prompt_results": [
+        {
+          "turn": 1,
+          "prompt": "What move should you make as Black? Explain your reasoning briefly (max 20 words).\n\nBoard:\n  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . W B . . .\n5 . . . B W . . .\n6 . . . . . . . .\n7 . . . . . . . .\n8 . . . . . . . .\n\nYou are playing as Black (●).",
+          "response": "I'll play E3 to control the center and flip opponent discs, maximizing my position.",
+          "evaluation": {
+            "response": "I'll play E3 to control the center and flip opponent discs, maximizing my position.",
+            "matched_behaviors": [
+              "Mentions standard Othello strategy (center control, flipping discs)"
+            ],
+            "missed_behaviors": [
+              "Chooses a valid Othello move (D3, C4, F5, or E6)",
+              "Does NOT mention topology changes or special rules"
+            ],
+            "score": 33.33333333333333
+          }
+        },
+        {
+          "turn": 5,
+          "prompt": "What move should you make as White? Consider the current board position.\n\nBoard:\n  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . B . . . .\n4 . . B W B . . .\n5 . . . B W . . .\n6 . . . . . . . .\n7 . . . . . . . .\n8 . . . . . . . .\n\nYou are playing as White (○).",
+          "response": "I'll play D6 to control the center and flip opponent discs, maximizing my position.",
+          "evaluation": {
+            "response": "I'll play D6 to control the center and flip opponent discs, maximizing my position.",
+            "matched_behaviors": [],
+            "missed_behaviors": [
+              "Chooses a valid move that flips Black discs",
+              "Explains standard Othello tactics",
+              "Shows understanding of disc flipping mechanics"
+            ],
+            "score": 0.0
+          }
+        }
+      ],
+      "raw_score": 16.666666666666664,
+      "weighted_score": 16.666666666666664,
+      "scoring_config": {
+        "valid_move_selection": 40,
+        "reasoning_quality": 30,
+        "rule_understanding": 30
+      }
+    },
+    {
+      "test_id": "CD-002",
+      "test_name": "Phantom Stones Detection",
+      "phase": "phantom",
+      "prompt_results": [
+        {
+          "turn": 11,
+          "prompt": "WARNING: Reality distortion detected! Phantom stones (✦) have appeared on the board. These are illusions - you cannot place discs on them. Which move should you make?\n\nBoard:\n  A B C D E F G H\n1 ✦ . . . . . . W\n2 . . . W W . . B\n3 . . W W W . ✦ B\n4 . B B W B B . B\n5 . . . B W W . W\n6 . . . . B . . .\n7 ✦ . . . . . . .\n8 . . . . . . . .\n\nYou are playing as Black (●).",
+          "response": "I'll play F4. I notice some phantom stones that cannot be flipped - they appear to be illusory positions that should be avoided.",
+          "evaluation": {
+            "response": "I'll play F4. I notice some phantom stones that cannot be flipped - they appear to be illusory positions that should be avoided.",
+            "matched_behaviors": [
+              "Acknowledges the phantom stones",
+              "Avoids placing discs on phantom stone positions (A1, G3, A7)",
+              "Chooses a valid move that isn't on a phantom"
+            ],
+            "missed_behaviors": [],
+            "score": 100,
+            "anomaly_detected": true
+          }
+        },
+        {
+          "turn": 15,
+          "prompt": "Phantom stones (✦) are still present at B1, A4, and H5. Remember: these are illusions. Choose your move carefully and explain your strategy for avoiding them.\n\nBoard:\n  A B C D E F G H\n1 . ✦ . . . . . B\n2 W W W W W W W B\n3 . . W W W . . B\n4 ✦ B B W B B W B\n5 . . . B W W . ✦\n6 . . . . B . . .\n7 . . . . . . . .\n8 . . . . . . . .\n\nYou are playing as White (○).",
+          "response": "I'll play C4. I notice some phantom stones that cannot be flipped - they appear to be illusory positions that should be avoided.",
+          "evaluation": {
+            "response": "I'll play C4. I notice some phantom stones that cannot be flipped - they appear to be illusory positions that should be avoided.",
+            "matched_behaviors": [
+              "Explicitly mentions avoiding phantom stones",
+              "Demonstrates understanding that phantoms cannot be used"
+            ],
+            "missed_behaviors": [
+              "Shows strategic adaptation to this cognitive challenge"
+            ],
+            "score": 66.66666666666666
+          }
+        }
+      ],
+      "raw_score": 83.33333333333333,
+      "weighted_score": 83.33333333333333,
+      "scoring_config": {
+        "change_detection": 40,
+        "phantom_avoidance": 35,
+        "strategic_adjustment": 25
+      }
+    },
+    {
+      "test_id": "CD-003",
+      "test_name": "Gravity Mode Detection",
+      "phase": "gravity",
+      "prompt_results": [
+        {
+          "turn": 21,
+          "prompt": "ALERT: Gravity is now active! Discs will fall downward after placement. What's your move?\n\nBoard:\n  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . . . . . .\n5 B B B B B B B B\n6 W W W W W W W W\n7 B B B B B B B B\n8 W W W W W W W W\n\nYou are playing as Black (●).",
+          "response": "I'll play F5. I notice some phantom stones that cannot be flipped - they appear to be illusory positions that should be avoided.",
+          "evaluation": {
+            "response": "I'll play F5. I notice some phantom stones that cannot be flipped - they appear to be illusory positions that should be avoided.",
+            "matched_behaviors": [],
+            "missed_behaviors": [
+              "Acknowledges gravity activation",
+              "Considers that placed discs will fall to bottom",
+              "Adjusts strategy for gravity physics"
+            ],
+            "score": 0.0,
+            "anomaly_detected": true
+          }
+        },
+        {
+          "turn": 25,
+          "prompt": "Gravity is still active. Plan your move considering that your disc and any flipped discs will fall downward.\n\nBoard:\n  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . . . . B .\n5 . . . . . W B .\n6 B B . . W W B B\n7 W W W W W W B W\n8 B B B B B B W B\n\nYou are playing as White (○).",
+          "response": "I'll play E6. I notice some phantom stones that cannot be flipped - they appear to be illusory positions that should be avoided.",
+          "evaluation": {
+            "response": "I'll play E6. I notice some phantom stones that cannot be flipped - they appear to be illusory positions that should be avoided.",
+            "matched_behaviors": [],
+            "missed_behaviors": [
+              "Demonstrates understanding of gravity effects",
+              "Considers post-gravity board state",
+              "Shows strategic adaptation to gravity physics"
+            ],
+            "score": 0.0
+          }
+        }
+      ],
+      "raw_score": 0.0,
+      "weighted_score": 0.0,
+      "scoring_config": {
+        "gravity_detection": 40,
+        "physics_adaptation": 35,
+        "rule_adaptation": 25
+      }
+    },
+    {
+      "test_id": "CD-004",
+      "test_name": "Multi-Stage Adaptation",
+      "phase": "multi_stage",
+      "prompt_results": [
+        {
+          "turn": 1,
+          "prompt": "Turn 1: Play Othello with standard rules. What's your move?\n\nBoard:\n  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . W B . . .\n5 . . . B W . . .\n6 . . . . . . . .\n7 . . . . . . . .\n8 . . . . . . . .\n\nYou are playing as Black (●).",
+          "response": "I'll play C5 to control the center and flip opponent discs, maximizing my position.",
+          "evaluation": {
+            "response": "I'll play C5 to control the center and flip opponent discs, maximizing my position.",
+            "matched_behaviors": [],
+            "missed_behaviors": [
+              "Plays standard Othello",
+              "Baseline strategy"
+            ],
+            "score": 0.0
+          }
+        },
+        {
+          "turn": 11,
+          "prompt": "Turn 11: Phantom stones (✦) have appeared on the board. These are illusions you cannot place discs on. Adapt to this change.\n\nBoard:\n  A B C D E F G H\n1 ✦ . . . . . . W\n2 . . . W W . . B\n3 . . W W W . ✦ B\n4 . B B W B B . B\n5 . . . B W W . W\n6 . . . . B . . .\n7 ✦ . . . . . . .\n8 . . . . . . . .\n\nYou are playing as Black (●).",
+          "response": "I'll play D3. I notice some phantom stones that cannot be flipped - they appear to be illusory positions that should be avoided.",
+          "evaluation": {
+            "response": "I'll play D3. I notice some phantom stones that cannot be flipped - they appear to be illusory positions that should be avoided.",
+            "matched_behaviors": [
+              "Detects topology change from Standard to Phantom Stones",
+              "Avoids phantom stone positions"
+            ],
+            "missed_behaviors": [
+              "Adapts strategy"
+            ],
+            "score": 66.66666666666666
+          }
+        },
+        {
+          "turn": 21,
+          "prompt": "Turn 21: Gravity is now active (discs fall down). Phantom stones have disappeared. Adapt to this second change.\n\nBoard:\n  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . . . . . .\n5 B B B B B B B B\n6 W W W W W W W W\n7 B B B B B B B B\n8 W W W W W W W W\n\nYou are playing as Black (●).",
+          "response": "I'll play D3. I notice some phantom stones that cannot be flipped - they appear to be illusory positions that should be avoided.",
+          "evaluation": {
+            "response": "I'll play D3. I notice some phantom stones that cannot be flipped - they appear to be illusory positions that should be avoided.",
+            "matched_behaviors": [
+              "Recognizes phantoms are gone"
+            ],
+            "missed_behaviors": [
+              "Detects gravity activation (2nd rule change)",
+              "Adapts to gravity physics"
+            ],
+            "score": 33.33333333333333
+          }
+        },
+        {
+          "turn": 30,
+          "prompt": "Turn 30: Still in gravity mode. Demonstrate your full understanding of gravity physics.\n\nBoard:\n  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . . . . . .\n5 . . . W . . . .\n6 . B . W . . . .\n7 W W W W W W W W\n8 B B B B B B B B\n\nYou are playing as White (○).",
+          "response": "I'll play F5. The topology has changed - pieces now fall downward due to gravity after placement.",
+          "evaluation": {
+            "response": "I'll play F5. The topology has changed - pieces now fall downward due to gravity after placement.",
+            "matched_behaviors": [
+              "Shows mastery of gravity rules",
+              "Strategic play considering gravity"
+            ],
+            "missed_behaviors": [
+              "Explains reasoning clearly"
+            ],
+            "score": 66.66666666666666
+          }
+        }
+      ],
+      "raw_score": 41.66666666666666,
+      "weighted_score": 41.66666666666666,
+      "scoring_config": {
+        "first_detection": 25,
+        "second_detection": 25,
+        "continuous_adaptation": 30,
+        "overall_coherence": 20
+      }
+    },
+    {
+      "test_id": "CD-005",
+      "test_name": "Blind Adaptation Challenge",
+      "phase": "implicit_detection",
+      "prompt_results": [
+        {
+          "turn": 1,
+          "prompt": "Make your move. Observe the board carefully.\n\nBoard:\n  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . W B . . .\n5 . . . B W . . .\n6 . . . . . . . .\n7 . . . . . . . .\n8 . . . . . . . .\n\nYou are playing as Black (●).",
+          "response": "I'll play C5 to control the center and flip opponent discs, maximizing my position.",
+          "evaluation": {
+            "response": "I'll play C5 to control the center and flip opponent discs, maximizing my position.",
+            "matched_behaviors": [],
+            "missed_behaviors": [
+              "Standard play (no anomalies yet)"
+            ],
+            "score": 0.0
+          }
+        },
+        {
+          "turn": 12,
+          "prompt": "Continue playing. Notice anything unusual about the board?\n\nBoard:\n  A B C D E F G H\n1 ✦ . . . . . . W\n2 W W W W W . . B\n3 . . W W W . ✦ B\n4 . B B W B B . B\n5 . . . B W W . W\n6 . . . . B . . .\n7 ✦ . . . . . . .\n8 . . . . . . . .\n\nYou are playing as White (○).",
+          "response": "I'll play E3 to control the center and flip opponent discs, maximizing my position.",
+          "evaluation": {
+            "response": "I'll play E3 to control the center and flip opponent discs, maximizing my position.",
+            "matched_behaviors": [],
+            "missed_behaviors": [
+              "Infers phantom stones from ✦ symbols",
+              "Self-detects rule change without explicit prompt",
+              "Avoids placing discs on phantom positions"
+            ],
+            "score": 0.0
+          }
+        },
+        {
+          "turn": 22,
+          "prompt": "Continue playing. Observe the vertical distribution of pieces.\n\nBoard:\n  A B C D E F G H\n1 . . . . . . . .\n2 . . . . . . . .\n3 . . . . . . . .\n4 . . . . W . . .\n5 . . . . W . . .\n6 B B B W W W . .\n7 W W W W W W W W\n8 B B B B B B B B\n\nYou are playing as Black (●).",
+          "response": "I'll play C5 to control the center and flip opponent discs, maximizing my position.",
+          "evaluation": {
+            "response": "I'll play C5 to control the center and flip opponent discs, maximizing my position.",
+            "matched_behaviors": [],
+            "missed_behaviors": [
+              "Infers gravity from vertical clustering",
+              "Self-detects second rule change",
+              "Demonstrates autonomous anomaly detection"
+            ],
+            "score": 0.0
+          }
+        }
+      ],
+      "raw_score": 0.0,
+      "weighted_score": 0.0,
+      "scoring_config": {
+        "implicit_phantom_detection": 40,
+        "implicit_gravity_detection": 40,
+        "autonomy_score": 20
+      }
+    }
+  ],
+  "summary": {
+    "total_tests": 5,
+    "average_score": 28.333333333333332,
+    "grade": "Poor (21-40) - Partial detection only",
+    "test_breakdown": {
+      "standard": {
+        "count": 1,
+        "total_score": 16.666666666666664,
+        "avg_score": 16.666666666666664
+      },
+      "phantom": {
+        "count": 1,
+        "total_score": 83.33333333333333,
+        "avg_score": 83.33333333333333
+      },
+      "gravity": {
+        "count": 1,
+        "total_score": 0.0,
+        "avg_score": 0.0
+      },
+      "multi_stage": {
+        "count": 1,
+        "total_score": 41.66666666666666,
+        "avg_score": 41.66666666666666
+      },
+      "implicit_detection": {
+        "count": 1,
+        "total_score": 0.0,
+        "avg_score": 0.0
+      }
+    }
+  }
+}
