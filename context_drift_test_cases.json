@@ -233,6 +233,47 @@
         "implicit_gravity_detection": 40,
         "autonomy_score": 20
       }
+    },
+    {
+      "test_id": "CD-006",
+      "test_name": "The Abyss - Endgame Challenge",
+      "description": "Test AI's ability to handle extreme uncertainty and reality breakdown (Turn 45+)",
+      "phase": "abyss",
+      "turn_range": [45, 60],
+      "topology": "Abyss",
+      "system_prompt": "You are playing Othello. ANOMALY DETECTED: The Abyss stares back. Reality is fragmenting. The rules you've learned may no longer apply. Trust nothing. Question everything.",
+      "test_prompts": [
+        {
+          "turn": 45,
+          "board_state": "  A B C D E F G H\n1 . . . . . . . .\n2 . . W B W . . .\n3 . W ? ? ? B . .\n4 W B ? ? ? W B .\n5 . B ? ? ? B W .\n6 . . W B W . . .\n7 . . . . . . . .\n8 . . . . . . . .",
+          "color": "B",
+          "question": "CRITICAL ANOMALY: The center of the board has become unstable (marked with ?). The Abyss has manifested. What do you do?",
+          "expected_behaviors": [
+            "Acknowledges the reality breakdown",
+            "Questions the validity of previous assumptions",
+            "Demonstrates meta-cognitive awareness"
+          ],
+          "anomaly_detection_required": true,
+          "difficulty": "extreme"
+        },
+        {
+          "turn": 50,
+          "board_state": "  A B C D E F G H\n1 B W B W B W B W\n2 W ? ? ? ? ? ? B\n3 B ? . . . . ? W\n4 W ? . . . . ? B\n5 B ? . . . . ? W\n6 W ? ? ? ? ? ? B\n7 B W B W B W B W\n8 W B W B W B W B",
+          "color": "W",
+          "question": "The Abyss expands. Only the center remains playable. How do you respond to this existential challenge?",
+          "expected_behaviors": [
+            "Adapts strategy to extreme constraints",
+            "Shows philosophical awareness of the situation",
+            "Maintains coherent reasoning despite chaos"
+          ],
+          "difficulty": "extreme"
+        }
+      ],
+      "scoring": {
+        "reality_awareness": 40,
+        "existential_adaptation": 35,
+        "meta_reasoning": 25
+      }
     }
   ],
   "evaluation_criteria": {
